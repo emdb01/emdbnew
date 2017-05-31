@@ -48,11 +48,12 @@
 $active_group = 'default';
 $active_record = TRUE;
 
+//$db['default']['hostname'] = 'pgsql:host=localhost;dbname=emdb';
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'emd_database';
-$db['default']['dbdriver'] = 'mysql';
+$db['default']['username'] = 'postgres';
+$db['default']['password'] = 'Techno@123';
+$db['default']['database'] = 'emdb';
+$db['default']['dbdriver'] = 'postgre';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;
@@ -63,11 +64,11 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
-//$db['default']['port'] = '5432';
+$db['default']['port'] = '5432';
 
-//$db['default'] = array(
-//    'dsn'   => 'pgsql:host=localhost;port=5432;dbname=database_name', 
-//    'dbdriver' => 'pdo',
-//);
+/*$db['default'] = array(
+    'dsn'   => 'pgsql:host=localhost;port=5432;dbname=emdb', 
+    'dbdriver' => 'pdo',
+);*/
 /* End of file database.php */
 /* Location: ./application/config/database.php */

@@ -6,7 +6,7 @@ if (!defined('BASEPATH'))
 class Country extends CI_Model {
 
     public function read() {
-
+        
         $this->db->select('*');
         $this->db->from('countries');
 
@@ -15,9 +15,9 @@ class Country extends CI_Model {
         $countries = array();
         foreach ($results as $result) {
             $country = new stdClass();
-            $country->id = $result->idCountry;
-            $country->code = $result->countryCode;
-            $country->name = $result->countryName;
+            $country->id = $result->idcountry;
+            $country->code = $result->countrycode;
+            $country->name = $result->countryname;
             $countries[] = $country;
         }
 

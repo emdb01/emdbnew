@@ -1,0 +1,6 @@
+/nbproject/private/
+/nbproject/*
+/api/application/config/*
+/api/application/logs/*
+/api/application/models/Proxies/*
+/api/system/*
