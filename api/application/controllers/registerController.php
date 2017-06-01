@@ -44,7 +44,7 @@ class RegisterController extends CI_Controller {
                         $country = $this->input->post('country');
                         $password = $this->Register->create($email, $whoareyou, $country);
 
-                        $from_email = "sekhar@employeemasterdatabase.com";
+                        /*$from_email = "sekhar@employeemasterdatabase.com";
                         $to_email = $email;
 
                         $this->email->from($from_email, 'Emloyee Master Database');
@@ -63,7 +63,7 @@ class RegisterController extends CI_Controller {
                         $this->email->send();
 
                         foreach ($this->email->get_debugger_messages() as $debugger_message)
-                            echo $debugger_message;
+                            echo $debugger_message;*/
 
 
                         $output['status'] = true;
