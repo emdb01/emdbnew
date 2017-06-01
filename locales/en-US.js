@@ -41,6 +41,7 @@ var i18n = {
         "are_you_sure": "Are you sure?",
         "fill_out_login": "Please fill out the login form.",
         "you_may_login": "You may now login.",
+        "check_email": "You are registered successfully, please check your email for credentials.",
         "passwords_not_match": "The passwords do not match.",
         "toggle_nav": "Toggle navigation",
         "admin_panel": "Administrator Panel",

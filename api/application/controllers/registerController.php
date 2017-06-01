@@ -6,6 +6,11 @@ if (!defined('BASEPATH'))
 //class RegisterController extends REST_Controller {
 class RegisterController extends CI_Controller {
 
+    function __construct() {
+        parent::__construct();
+        $this->load->library('email');
+    }
+
     public function login() {
         $this->form_validation->set_rules('email', 'email', 'required|valid_email|max_length[256]');
         $this->form_validation->set_rules('password', 'password', 'required|min_length[8]|max_length[256]');
@@ -37,7 +42,24 @@ class RegisterController extends CI_Controller {
                     if ($check) {
                         $whoareyou = $this->input->post('who');
                         $country = $this->input->post('country');
-                        $this->Register->create($email, $whoareyou, $country);
+                        $password = $this->Register->create($email, $whoareyou, $country);
+
+                        $from_email = "sekhar@employeemasterdatabase.com";
+                        $to_email = $email;
+
+                        $this->email->from($from_email, 'Emloyee Master Database');
+                        $this->email->to($to_email);
+                        $this->email->subject('Welcome to Employee Master Database');
+                        $this->email->message('Hi /n');
+                        $this->email->message('These below are the your email id and a temporary password to login to Employee Master Database. /n');
+                        $this->email->message('Email : ' . $to_email . ' /n');
+                        $this->email->message('Temporary Password : ' . $password . ' /n');
+                        $this->email->message('/n');
+                        $this->email->message('Thanks' . '/n');
+                        $this->email->message('EMDB Team' . '/n');
+                        echo $this->email;
+                        $this->email->send();
+
                         $output['status'] = true;
                         return $output;
                     } else {

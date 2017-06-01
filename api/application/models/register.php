@@ -16,6 +16,7 @@ class Register extends CI_Model {
         );
      
         $this->db->insert('register', $data);
+        return $tm;
     }
     
     public function mail_exists($key) {
