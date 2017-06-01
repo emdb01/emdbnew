@@ -57,7 +57,6 @@ class RegisterController extends CI_Controller {
                         $this->email->message('/n');
                         $this->email->message('Thanks' . '/n');
                         $this->email->message('EMDB Team' . '/n');
-                        echo $this->email;
                         $this->email->send();
 
                         $output['status'] = true;
