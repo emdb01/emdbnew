@@ -29,6 +29,7 @@ class RegisterController extends CI_Controller {
     public function register() {
         
         $this->form_validation->set_rules('email', 'email', 'required|valid_email|max_length[256]');
+        $this->form_validation->set_rules('who', 'Who are you?', 'required');
         return Validation::validate($this, '', '', function($token, $output) {
                     $email = $this->input->post('email');
                     $whoareyou = $this->input->post('who');

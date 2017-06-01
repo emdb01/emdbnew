@@ -6,13 +6,15 @@ if (!defined('BASEPATH'))
 class Register extends CI_Model {
 
     public function create($email, $whoareyou, $country) {
-;
+        $tm = time();
+        $hashedPassword = Password::create_hash($tm);
         $data = array(
             'who' => $whoareyou,
             'country' => $country['name'],
             'email' => $email,
+            'temp_password' => $hashedPassword,
         );
-        $countryname=$country['name'];
+     
         $this->db->insert('register', $data);
     }
 
