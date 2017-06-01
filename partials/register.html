@@ -18,18 +18,18 @@
                             <label i18n="who_are_you"></label><code>*</code>
                             <div class="form-group col-lg-12">
                                 <div class="form-group col-lg-3">
-                                    <input type="radio" autofocus ng-model="input.who" value="Jobseeker" >&nbsp;Job Seeker
+                                    <input type="radio" ng-model="input.who" value="Jobseeker" >&nbsp;Job Seeker
                                 </div>
                                 <div class="form-group col-lg-3">
-                                    <input type="radio" autofocus ng-model="input.who" value="Recruiter" >&nbsp;Recruiter
+                                    <input type="radio" ng-model="input.who" value="Recruiter" >&nbsp;Recruiter
                                 </div>
                                 <div class="form-group col-lg-4">
-                                    <input type="radio" autofocus ng-model="input.who" value="Government Agency" >&nbsp;Government Agency
+                                    <input type="radio" ng-model="input.who" value="Government Agency" >&nbsp;Government Agency
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form-group col-lg-12">
+                        <div class="form-group col-lg-12" style="margin-top: -30px;">
                             <label i18n="email_id"></label><code>*</code>
                             <input type="email" class="form-control" ng-model="input.email" ng-pattern="emailFormat" required>
                         </div>
@@ -41,11 +41,11 @@
                             </select>
                         </div>
                         <div class="form-group col-lg-12" >
-                            <div class="form-group col-lg-2">
+                            <div class="form-group col-lg-1">
                                 <input type="checkbox" class="form-control" ng-model="input.agree"  required>
                             </div>
                             <div class="form-group col-lg-10" style="margin-top:10px;">
-                                I agree to Talent Database Terms of Service and Privacy Policy
+                                I agree to Talent Database Terms of Service and Privacy Policy <a href="#">click </a>
                             </div>
 
                         </div>
