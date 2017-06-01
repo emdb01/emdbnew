@@ -3,7 +3,8 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class RegisterController extends REST_Controller {
+//class RegisterController extends REST_Controller {
+class RegisterController extends CI_Controller {
  
     public function login() {
         $this->form_validation->set_rules('email', 'email', 'required|valid_email|max_length[256]');
@@ -39,13 +40,13 @@ class RegisterController extends REST_Controller {
                     $company = $this->input->post('company');
                     $phone = $this->input->post('phone');
                     $country = $this->input->post('country');
-                    $this->Recruiter->register($email, $password, $firstName, $middleName, $lastName, $company, $phone, $country);
+                    $this->Recruiter->addRecruiter($email, $password, $firstName, $middleName, $lastName, $company, $phone, $country);
                     $output['status'] = true;
                     return $output;
                 });
-        $email = $this->input->post('email');
+        /*$email = $this->input->post('email');
         $password = $this->input->post('password');
-        $this->User->register($email, $password);
+        $this->User->register($email, $password);*/
     }
 
     public function permissions() {

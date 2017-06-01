@@ -48,11 +48,11 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'emd_database';
-$db['default']['dbdriver'] = 'mysql';
+$db['default']['hostname'] = 'ec2-23-23-234-118.compute-1.amazonaws.com';
+$db['default']['username'] = 'wblzmmaclaokib';
+$db['default']['password'] = '32db2be81f9d598ee98bd65fcd73ff8b49e00c2a77dbccb67db4abdb019b66da';
+$db['default']['database'] = 'd9gvp7jd6eo2li';
+$db['default']['dbdriver'] = 'postgre';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;
@@ -63,11 +63,11 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
-//$db['default']['port'] = '5432';
+$db['default']['port'] = '5432';
 
-//$db['default'] = array(
-//    'dsn'   => 'pgsql:host=localhost;port=5432;dbname=database_name', 
-//    'dbdriver' => 'pdo',
-//);
+/*$db['default'] = array(
+    'dsn'   => 'pgsql:host=localhost;port=5432;dbname=emdb', 
+    'dbdriver' => 'pdo',
+);*/
 /* End of file database.php */
 /* Location: ./application/config/database.php */

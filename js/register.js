@@ -16,7 +16,7 @@ controllers.controller('register', ['$scope', '$location', '$http', 'alerts', fu
             $scope.waiting = false;
             return;
         }
-        $http.post('api/RegisterController/register', {
+        $http.post('api/registerController/register', {
             firstName: $scope.input.fname,
             middleName: $scope.input.mname,
             lastName: $scope.input.lname,
