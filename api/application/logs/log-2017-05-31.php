@@ -5246,3 +5246,26 @@ DEBUG - 2017-05-31 15:25:44 --> Model Class Initialized
 DEBUG - 2017-05-31 15:25:44 --> Controller Class Initialized
 DEBUG - 2017-05-31 15:25:44 --> Final output sent to browser
 DEBUG - 2017-05-31 15:25:44 --> Total execution time: 0.0920
+DEBUG - 2017-05-31 17:58:09 --> Config Class Initialized
+DEBUG - 2017-05-31 17:58:09 --> Hooks Class Initialized
+DEBUG - 2017-05-31 17:58:09 --> Utf8 Class Initialized
+DEBUG - 2017-05-31 17:58:09 --> UTF-8 Support Enabled
+DEBUG - 2017-05-31 17:58:09 --> URI Class Initialized
+DEBUG - 2017-05-31 17:58:09 --> Router Class Initialized
+DEBUG - 2017-05-31 17:58:09 --> Output Class Initialized
+DEBUG - 2017-05-31 17:58:09 --> Security Class Initialized
+DEBUG - 2017-05-31 17:58:09 --> Input Class Initialized
+DEBUG - 2017-05-31 17:58:09 --> Global POST and COOKIE data sanitized
+DEBUG - 2017-05-31 17:58:09 --> Language Class Initialized
+DEBUG - 2017-05-31 17:58:09 --> Loader Class Initialized
+DEBUG - 2017-05-31 17:58:09 --> Config file loaded: application/config/jwt.php
+DEBUG - 2017-05-31 17:58:09 --> Helper loaded: url_helper
+DEBUG - 2017-05-31 17:58:09 --> Helper loaded: form_helper
+DEBUG - 2017-05-31 17:58:09 --> Helper loaded: password_helper
+DEBUG - 2017-05-31 17:58:09 --> Helper loaded: jwt_helper
+DEBUG - 2017-05-31 17:58:09 --> Helper loaded: acl_helper
+DEBUG - 2017-05-31 17:58:09 --> Helper loaded: validation_helper
+DEBUG - 2017-05-31 17:58:09 --> Database Driver Class Initialized
+ERROR - 2017-05-31 17:58:12 --> Severity: Warning  --> pg_pconnect(): Unable to connect to PostgreSQL server: FATAL:  role &quot;wblzmmaclaokib&quot; is not permitted to log in F:\xampp\htdocs\emdbnew\api\system\database\drivers\postgre\postgre_driver.php 99
+ERROR - 2017-05-31 17:58:12 --> Unable to connect to the database
+DEBUG - 2017-05-31 17:58:12 --> Language file loaded: language/english/db_lang.php

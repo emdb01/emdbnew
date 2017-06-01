@@ -11,21 +11,10 @@ controllers.controller('register', ['$scope', '$location', '$http', 'alerts', fu
 
     $scope.register = function() {
         $scope.waiting = true;
-        if ($scope.input.password != $scope.input.confirmation) {
-            alerts.fail(i18n.t('passwords_not_match'));
-            $scope.waiting = false;
-            return;
-        }
         $http.post('api/registerController/register', {
-            firstName: $scope.input.fname,
-            middleName: $scope.input.mname,
-            lastName: $scope.input.lname,
-            company: $scope.input.company,
-            phone: $scope.input.phone,
+            who: $scope.input.who,
             country: $scope.input.country,
             email: $scope.input.email,
-            password: $scope.input.password,
-            confirmation: $scope.input.confirmation
         }).success(function(data) {
             $scope.waiting = false;
             if (data.status) {
