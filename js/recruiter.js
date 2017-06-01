@@ -18,7 +18,7 @@ controllers.controller('recruitersList', ['$scope', '$location', '$http', '$wind
         };
 
         $scope.getRecruitersList = function () {
-            $http.get('./api/RecruiterController/getRecruitersList').success(function (data) {
+            $http.get('./api/recruiterController/getRecruitersList').success(function (data) {
                 $scope.gridOptions1.data = data;
                 $scope.recruiters = data;
             })
