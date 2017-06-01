@@ -34,7 +34,7 @@ controllers.controller('register', ['$scope', '$location', '$http', 'alerts', fu
     };
     
     $scope.getCounties = function(){
-        $http.get('./api/RegisterController/getCountries').success(function(data){
+        $http.get('./api/registerController/getCountries').success(function(data){
             $scope.countries = data;
         })
     }
