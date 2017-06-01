@@ -29,18 +29,11 @@ class RegisterController extends CI_Controller {
     public function register() {
         
         $this->form_validation->set_rules('email', 'email', 'required|valid_email|max_length[256]');
-        $this->form_validation->set_rules('password', 'password', 'required|min_length[8]|max_length[256]');
         return Validation::validate($this, '', '', function($token, $output) {
                     $email = $this->input->post('email');
-                    $password = $this->input->post('password');
-                    $confirmation = $this->input->post('confirmation');
-                    $firstName = $this->input->post('firstName');
-                    $middleName = $this->input->post('middleName');
-                    $lastName = $this->input->post('lastName');
-                    $company = $this->input->post('company');
-                    $phone = $this->input->post('phone');
+                    $whoareyou = $this->input->post('who');
                     $country = $this->input->post('country');
-                    $this->Recruiter->addRecruiter($email, $password, $firstName, $middleName, $lastName, $company, $phone, $country);
+                    $this->Register->create($email,$whoareyou,$country);
                     $output['status'] = true;
                     return $output;
                 });

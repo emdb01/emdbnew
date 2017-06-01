@@ -1,11 +1,11 @@
 <div class="content">
     <form ng-submit="register()">
         <div class="container" style="margin-top:30px">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-6  col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">
-                            <strong i18n="sign_up"></strong>
+                            <strong i18n="registration"></strong>
                         </h3>
                     </div>
                     <div class="panel-heading col-lg-12" style="border: 1px solid #ddd;">
@@ -14,54 +14,43 @@
                             </div>
                         </div>
 
-                        <div class="form-group col-lg-6">
-                            <label i18n="first_name"></label><code>*</code>
-                            <input type="text" class="form-control" autofocus ng-model="input.fname" required>
+                        <div class="form-group col-lg-12">
+                            <label i18n="who_are_you"></label><code>*</code>
+                            <div class="form-group col-lg-12">
+                                <div class="form-group col-lg-3">
+                                    <input type="radio" autofocus ng-model="input.who" value="Jobseeker" >&nbsp;Job Seeker
+                                </div>
+                                <div class="form-group col-lg-3">
+                                    <input type="radio" autofocus ng-model="input.who" value="Recruiter" >&nbsp;Recruiter
+                                </div>
+                                <div class="form-group col-lg-4">
+                                    <input type="radio" autofocus ng-model="input.who" value="Government Agency" >&nbsp;Government Agency
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form-group col-lg-6">
-                            <label i18n="middle_name"></label>
-                            <input type="text" class="form-control" autofocus ng-model="input.mname">
-                        </div>
-
-                        <div class="form-group col-lg-6">
-                            <label i18n="last_name"></label><code>*</code>
-                            <input type="text" class="form-control" ng-model="input.lname" required>
-                        </div>
-
-                        <div class="form-group col-lg-6">
-                            <label i18n="company_name"></label><code>*</code>
-                            <input type="text" class="form-control" ng-model="input.company" required>
-                        </div>
-
-                        <div class="form-group col-lg-6">
-                            <label i18n="corporate_email_id"></label><code>*</code>
+                        <div class="form-group col-lg-12">
+                            <label i18n="email_id"></label><code>*</code>
                             <input type="email" class="form-control" ng-model="input.email" ng-pattern="emailFormat" required>
                         </div>
 
-                        <div class="form-group col-lg-6">
-                            <label i18n="your_mobile_number"></label><code>*</code>
-                            <input type="phone" class="form-control" ng-model="input.phone" required>
-                        </div>
-
-                        <div class="form-group col-lg-6">
-                            <label i18n="password"></label><code>*</code>
-                            <input type="password" class="form-control" ng-model="input.password" required>
-                        </div>
-
-                        <div class="form-group col-lg-6">
-                            <label i18n="confirm_password"></label><code>*</code>
-                            <input type="password" class="form-control" ng-model="input.confirmation" required>
-                        </div>
-
-                        <div class="form-group col-lg-6">
+                        <div class="form-group col-lg-12">
                             <label i18n="country"></label><code>*</code>
                             <select size="1" ng-model="input.country" ng-options="aam.name for aam in countries"   required class="form-control">  
                                 <option selected></option>
                             </select>
                         </div>
+                         <div class="form-group col-lg-12" >
+                             <div class="form-group col-lg-2">
+                              <input type="checkbox" class="form-control" ng-model="input.agree"  required>
+                              </div>
+                              <div class="form-group col-lg-10" style="margin-top:10px;">
+                           I agree to Talent Database Terms of Service and Privacy Policy
+                            </div>
+                           
+                        </div>
                         <div class="col-lg-12">
-                            <button class="btn btn-sm btn-primary" ladda="waiting" i18n-ladda="register"></button>
+                            <button class="btn btn-sm btn-primary" ladda="waiting" i18n-ladda="create_account"></button>
                         </div>
                     </div>
 

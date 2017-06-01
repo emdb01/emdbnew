@@ -33,6 +33,13 @@ var i18n = {
         "corporate_email_id"    : "Corporate Email Id",
         "your_mobile_number"    : "Your Mobile Number",
         "country"               : "Country",
+        
+        "who_are_you"           : "Who are you?",
+        "email_id"              : "Email",
+        "agree"                 : "I agree to Talent Database Terms of Service and Privacy Policy",
+        "create_account"         : "Create Account",
+        "registration"         : "Registration",
+        
     
         "are_you_sure"          : "Are you sure?",
         "fill_out_login"        : "Please fill out the login form.",
