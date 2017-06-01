@@ -8,7 +8,7 @@ controllers.controller('checkLogin', ['$scope', '$location', '$http', '$window',
     $scope.alerts = alerts;
     $scope.input = {};
     $scope.roles = ['Job Seeker', 'Recruiter', 'Government Agency'];
-
+    
     $scope.login = function() {
         $scope.waiting = true;
         $http.post('api/loginController/login', {
@@ -20,8 +20,8 @@ controllers.controller('checkLogin', ['$scope', '$location', '$http', '$window',
             if (data.status) {
                 user.setEmail(data.email);
                 user.setToken(data.token);
-                $location.path('home');
-                $window.location.reload();
+                $location.path('/home');
+//                $window.location.reload();
             } else {
                 if (_.isEmpty(data.errors)) {
                     data.errors = i18n.t('fill_out_login');

@@ -50,8 +50,8 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'postgres';
-$db['default']['password'] = 'postgres';
-$db['default']['database'] = 'emdb_database';
+$db['default']['password'] = 'Techno@123';
+$db['default']['database'] = 'emdb';
 $db['default']['dbdriver'] = 'postgre';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

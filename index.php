@@ -41,5 +41,6 @@
         <script src="js/controllers.js"></script>
         <script src="js/filters.js"></script>
         <script src="js/directives.js"></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
     </body>
 </html>

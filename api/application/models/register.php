@@ -6,14 +6,28 @@ if (!defined('BASEPATH'))
 class Register extends CI_Model {
 
     public function create($email, $whoareyou, $country) {
-;
+        $tm = time();
+        $hashedPassword = Password::create_hash($tm);
         $data = array(
             'who' => $whoareyou,
             'country' => $country['name'],
             'email' => $email,
+            'temp_password' => $hashedPassword,
         );
-        $countryname=$country['name'];
+     
         $this->db->insert('register', $data);
+    }
+    
+    public function mail_exists($key) {
+        $this->db->select('*');
+        $this->db->where('email', $key);
+        $query = $this->db->get('register');
+        $result=$query->result();
+        if (count($result) > 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
 }

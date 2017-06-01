@@ -5,10 +5,11 @@ if (!defined('BASEPATH'))
 
 //class RegisterController extends REST_Controller {
 class RegisterController extends CI_Controller {
- 
+
     public function login() {
         $this->form_validation->set_rules('email', 'email', 'required|valid_email|max_length[256]');
         $this->form_validation->set_rules('password', 'password', 'required|min_length[8]|max_length[256]');
+        $this->form_validation->set_rules('who', 'Who are you?', 'required');
         return Validation::validate($this, '', '', function($token, $output) {
                     $email = $this->input->post('email');
                     $password = $this->input->post('password');
@@ -27,19 +28,25 @@ class RegisterController extends CI_Controller {
     }
 
     public function register() {
-        
+
         $this->form_validation->set_rules('email', 'email', 'required|valid_email|max_length[256]');
+        $this->form_validation->set_rules('who', 'Who are you?', 'required');
         return Validation::validate($this, '', '', function($token, $output) {
                     $email = $this->input->post('email');
-                    $whoareyou = $this->input->post('who');
-                    $country = $this->input->post('country');
-                    $this->Register->create($email,$whoareyou,$country);
-                    $output['status'] = true;
-                    return $output;
+                    $check = $this->Register->mail_exists($email);
+                    if ($check) {
+                        $whoareyou = $this->input->post('who');
+                        $country = $this->input->post('country');
+                        $this->Register->create($email, $whoareyou, $country);
+                        $output['status'] = true;
+                        return $output;
+                    } else {
+                        $output['status'] = false;
+                        $output['errors'] = '{"type": "exists"}';
+
+                        return $output;
+                    }
                 });
-        /*$email = $this->input->post('email');
-        $password = $this->input->post('password');
-        $this->User->register($email, $password);*/
     }
 
     public function permissions() {
@@ -54,10 +61,10 @@ class RegisterController extends CI_Controller {
                     return $output;
                 });
     }
-    
-    public function getCountries(){
+
+    public function getCountries() {
 //        $this->load->model('Country');
-        $countries =  $this->Country->read();
+        $countries = $this->Country->read();
         echo json_encode($countries);
     }
 

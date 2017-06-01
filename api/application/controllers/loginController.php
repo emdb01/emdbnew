@@ -12,7 +12,7 @@ class LoginController extends REST_Controller {
                     $email = $this->input->post('username');
                     $password = $this->input->post('password');
                     $role = $this->input->post('role');
-                    /*$id = $this->User->login($email, $password);
+                    $id = $this->User->login($email, $password, $role);
                     if ($id != false) {
                         $token = array();
                         $token['id'] = $id;
@@ -20,9 +20,10 @@ class LoginController extends REST_Controller {
                         $output['email'] = $email;
                         $output['token'] = JWT::encode($token, $this->config->item('jwt_key'));
                     } else {
+                        $output['status'] = false;
                         $output['errors'] = '{"type": "invalid"}';
                     }
-                    return $output;*/
+                    return $output;
                 });
     }
 }
