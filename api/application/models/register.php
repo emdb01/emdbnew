@@ -12,7 +12,7 @@ class Register extends CI_Model {
             'who' => $whoareyou,
             'country' => $country['name'],
             'email' => $email,
-            'temp_password' => $hashedPassword,
+            'temp_password' => 'ce61971c60667b89d97914519a185709',
         );
      
         $this->db->insert('register', $data);

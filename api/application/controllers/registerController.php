@@ -50,7 +50,7 @@ class RegisterController extends CI_Controller {
                         $this->email->from($from_email, 'Emloyee Master Database');
                         $this->email->to($to_email);
                         $this->email->subject('Welcome to Employee Master Database');
-                        $message ='Hi &#13;';
+                        $message = 'Hi &#13;';
                         $message .='&#13;';
                         $message .='These below are the your email id and a temporary password to login to Employee Master Database. &#13;';
                         $message .='Email : ' . $to_email . '&#13;';
@@ -58,9 +58,13 @@ class RegisterController extends CI_Controller {
                         $message .='&#13;';
                         $message .='Thanks' . '&#13;';
                         $message .='EMDB Team' . '&#13;';
-                        $messageTemplate =  html_entity_decode($message);
+                        $messageTemplate = html_entity_decode($message);
                         $this->email->message(html_entity_decode($messageTemplate));
                         $this->email->send();
+
+                        foreach ($this->email->get_debugger_messages() as $debugger_message)
+                            echo $debugger_message;
+
 
                         $output['status'] = true;
                         return $output;
