@@ -5,8 +5,8 @@ if (!defined('BASEPATH'))
 class LoginController extends REST_Controller {
     public function login() {
        
-        $this->form_validation->set_rules('username', 'Email or Emdb Id', 'required|max_length[256]');
-        $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]|max_length[256]');
+        $this->form_validation->set_rules('username', 'Email or Emdb Id', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
         $this->form_validation->set_rules('role', 'Role', 'required');
         return Validation::validate($this, '', '', function($token, $output) {
                     $email = $this->input->post('username');
