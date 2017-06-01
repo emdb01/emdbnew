@@ -7,12 +7,14 @@ var controllers = angular.module('acs.loginControllers', []);
 controllers.controller('checkLogin', ['$scope', '$location', '$http', '$window', 'alerts', 'user', function($scope, $location, $http, $window, alerts, user) {
     $scope.alerts = alerts;
     $scope.input = {};
+    $scope.roles = ['Job Seeker', 'Recruiter', 'Government Agency'];
 
     $scope.login = function() {
         $scope.waiting = true;
-        $http.post('api/LoginController/login', {
-            email: $scope.input.email,
-            password: $scope.input.password
+        $http.post('api/loginController/login', {
+            username: $scope.input.username,
+            password: $scope.input.password,
+            role: $scope.input.role
         }).success(function(data) {
             $scope.waiting = false;
             if (data.status) {

@@ -97,7 +97,12 @@ var i18n = {
         
         "invalid"               : "The email/password combination entered is invalid.",
         "access"                : "You do not have access to that resource.",
-        "unathenticated"        : "You must login first."
+        "unathenticated"        : "You must login first.",
+        
+        
+        //login form
+        
+        "enter_email_or_emdb_id" : "Email or Emdb Id"
 
     },
     s: function(key, value) {
