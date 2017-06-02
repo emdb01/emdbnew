@@ -2,17 +2,19 @@
 
 class User extends CI_Model {
 
-	public function login($email, $password)
+	public function login($email, $password, $role)
 	{
 		$this->db->select('*');
-		$this->db->from('recruiter');
+		$this->db->from('register');
 		$this->db->where('email', $email);
+		$this->db->where('who', $role);
 		$this->db->limit(1);
 		$query = $this->db->get();
 		if ($query->num_rows() == 1)
 		{
 			$result = $query->result();
-			if (Password::validate_password($password, $result[0]->pass))
+			if (Password::validate_password($password, $result[0]->temp_password))
+//			if (Password::validate_password($password, 'Techno@123'))
 			{
 				return $result[0]->id;
 			}

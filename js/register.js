@@ -18,7 +18,7 @@ controllers.controller('register', ['$scope', '$location', '$http', 'alerts', fu
         }).success(function(data) {
             $scope.waiting = false;
             if (data.status) {
-                alerts.success(i18n.t('you_may_login'));
+                alerts.success(i18n.t('check_email'));
                 $location.path('login');
             } else {
                 if (_.isEmpty(data.errors)) {
@@ -34,7 +34,7 @@ controllers.controller('register', ['$scope', '$location', '$http', 'alerts', fu
     };
     
     $scope.getCounties = function(){
-        $http.get('./api/RegisterController/getCountries').success(function(data){
+        $http.get('./api/registerController/getCountries').success(function(data){
             $scope.countries = data;
         })
     }

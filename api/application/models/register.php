@@ -12,10 +12,23 @@ class Register extends CI_Model {
             'who' => $whoareyou,
             'country' => $country['name'],
             'email' => $email,
-            'temp_password' => $hashedPassword,
+            'temp_password' => 'ce61971c60667b89d97914519a185709',
         );
      
         $this->db->insert('register', $data);
+        return $tm;
+    }
+    
+    public function mail_exists($key) {
+        $this->db->select('*');
+        $this->db->where('email', $key);
+        $query = $this->db->get('register');
+        $result=$query->result();
+        if (count($result) > 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
 }
