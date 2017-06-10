@@ -1,6 +1,5 @@
 <div id="sidebar-wrap" ng-controller="NavCtrl">
-  <uib-accordion close-others="oneAtTime" slimscroll="{height: '100%'}">
-    <uib-accordion-group is-open="status.isFirstOpen">
+  <uib-accordion close-others="oneAtTime" slimscroll="{height: '100%'}">   
       <ul id="navigation" nav-collapse ripple>
         <li ng-repeat="item in menuItems" ui-sref-active="active" ng-class="dropdown">
             <a ui-sref="{{item.sref}}"><fa name="{{item.icon}}"></fa> <span>{{item.text | translate}}</span></a>
@@ -21,6 +20,5 @@
           </ul>
         </li>
       </ul>
-    </uib-accordion-group>
   </uib-accordion>
 </div>
