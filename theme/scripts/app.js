@@ -96,6 +96,7 @@ var app = angular
       controller: 'DashboardCtrl',
       templateUrl: 'theme/views/tmpl/dashboard.html'
     })
+    
     //app core pages (errors, login,signup)
       .state('core', {
       abstract: true,
@@ -152,7 +153,7 @@ var app = angular
           return $ocLazyLoad.load([
             'theme/scripts/vendor/filestyle/bootstrap-filestyle.min.js'
           ]);
-        }]
+        }],
       }
     })
   }]);

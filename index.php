@@ -168,14 +168,14 @@
     <script src="theme/scripts/directives/todoescape.js"></script>
     <script src="theme/scripts/controllers/ui-widgets.js"></script>
     <script src="theme/scripts/directives/active-toggle.js"></script>
-    <script src="theme/scripts/controllers/pages-login.js"></script>
+<!--    <script src="theme/scripts/controllers/pages-login.js"></script>
     <script src="theme/scripts/controllers/pages-signup.js"></script>
     <script src="theme/scripts/controllers/pages-forgot-password.js"></script>
     <script src="theme/scripts/controllers/pages-gallery.js"></script>
     <script src="theme/scripts/controllers/pages-timeline.js"></script>
     <script src="theme/scripts/controllers/pages-chat.js"></script>
     <script src="theme/scripts/controllers/pages-search-results.js"></script>
-    <script src="theme/scripts/controllers/pages-profile.js"></script>
+    <script src="theme/scripts/controllers/pages-profile.js"></script>-->
     <script src="theme/scripts/controllers/help.js"></script>
     <script src="theme/scripts/directives/anchor-scroll.js"></script>
     <script src="theme/scripts/controllers/offcanvaslayout.js"></script>
