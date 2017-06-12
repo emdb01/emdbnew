@@ -4,12 +4,12 @@ if (!defined('BASEPATH'))
 
 class MenuController extends CI_Controller {
     public function getMenu() {
-        $menu = array('Dashboard' => array('text' => 'Dashboard', 'sref' => 'app.dashboard', 'icon' => 'dashboard'),
-                      'Trainings' => array('text' => 'Trainings', 'sref' => '#', 'icon' => 'fa fa-mortar-board',
-                       'submenu' => array(array('text' => 'Trainings List', 'sref' => 'app.dashboard'),
-                                           array('text' => 'Materials', 'sref' => 'app.dashboard'),
-					   array('text' => 'Trainees', 'sref' => 'app.dashboard'),
-					   array('text' => 'Reports', 'sref' => 'app.dashboard'),
+        $menu = array('Dashboard' => array('text' => 'Dashboard', 'sref' => 'app.dashboard', 'icon' => 'dashboard','status'=>'active'),
+                      'Trainings' => array('text' => 'Trainings', 'sref' => 'app.dashboard', 'icon' => 'fa fa-mortar-board',
+                       'submenu' => array(array('text' => 'Trainings List', 'sref' => 'app.dashboard','status'=>''),
+                                           array('text' => 'Materials', 'sref' => 'app.dashboard','status'=>''),
+					   array('text' => 'Trainees', 'sref' => 'app.dashboard','status'=>''),
+					   array('text' => 'Reports', 'sref' => 'app.dashboard','status'=>''),
                         )));
         
         echo json_encode($menu);

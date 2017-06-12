@@ -1,23 +1,16 @@
 <div id="sidebar-wrap" ng-controller="NavCtrl">
-  <uib-accordion close-others="oneAtTime" slimscroll="{height: '100%'}">   
-      <ul id="navigation" nav-collapse ripple>
-        <li ng-repeat="item in menuItems" ui-sref-active="active" ng-class="dropdown">
+  <uib-accordion close-others="oneAtTime">   
+      <ul id="navigation" nav-collapse ripple ng-repeat="item in menuItems" >
+        <li ui-sref-active="{{item.status}}" ng-show= "item.submenu" ng-class="{'open':$state.includes({{item.sref}})}">
             <a ui-sref="{{item.sref}}"><fa name="{{item.icon}}"></fa> <span>{{item.text | translate}}</span></a>
-            <div ng-if="item.submenu !=''">
-                <ul>
-                    <li ui-sref-active="active" ng-repeat="sub in item.submenu">
+                <ul ng-if="item.submenu !=''">
+                    <li ui-sref-active="{{item.submenu.status}}" ng-repeat="sub in item.submenu">
                         <a ui-sref="{{sub.sref}}"><fa name="caret-right"></fa> {{sub.text | translate}}</a>
                     </li>
                 </ul>
-            </div>
         </li>
-        <li ui-sref-active="active" ng-class="{'open':$state.includes('app.mail')}">
-          <a ui-sref="app.mail"><fa name="envelope-o"></fa> <span>{{ 'Menu.MAIL' | translate }}</span></a>
-          <ul>
-            <li ui-sref-active="active"><a ui-sref="app.mail.inbox"><fa name="caret-right"></fa> {{ 'Menu.INBOX' | translate }}</a></li>
-            <li ui-sref-active="active"><a ui-sref="app.mail.compose"><fa name="caret-right"></fa> {{ 'Menu.COMPOSE_MAIL' | translate }}</a></li>
-            <li ui-sref-active="active"><a ui-sref="app.mail.single"><fa name="caret-right"></fa> {{ 'Menu.SINGLE_MAIL' | translate }}</a></li>
-          </ul>
+        <li ui-sref-active="{{item.status}}" ng-show = "!item.submenu">
+            <a ui-sref="{{item.sref}}"><fa name="{{item.icon}}"></fa> <span>{{item.text | translate}}</span></a>
         </li>
       </ul>
   </uib-accordion>
